@@ -51,7 +51,8 @@ else
 fi
 LISTEN=$(ss -ltn 2>/dev/null | awk '$4 ~ /:7890$/' | wc -l)
 [ "$LISTEN" -gt 0 ] && ok "mixed-port 7890" "监听中" || bad "mixed-port 7890" "未监听"
-POOL=$(ss -ltn 2>/dev/null | awk '$4 ~ /:12(0|1)[0-9][0-9]$/' | wc -l)
+# 端口池段随实例迁移过（12000-12111 → 22000-22111），两段都认
+POOL=$(ss -ltn 2>/dev/null | awk '$4 ~ /:12(0|1)[0-9][0-9]$/ || $4 ~ /:22(0|1)[0-9][0-9]$/' | wc -l)
 [ "$POOL" -gt 50 ] && ok "监听端口池" "$POOL 个" || warn "监听端口池" "$POOL 个（期望 112）"
 
 # 5. 出口 IP（铁律：走代理）
