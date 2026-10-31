@@ -114,6 +114,47 @@ find /tmp/deploytest/.hermes/skills -name SKILL.md | wc -l
 
 验证三项：技能总数与仓库一致、关键技能逐个 `find -type d -name` 确认到位、`awk -F/ '{print $NF}' | sort | uniq -d` 无输出（无重名）。
 
+## 引用完整性：双向扫描（缺失 + 孤儿）
+
+技能正文里写的 `scripts/<名字>.py`、`references/<名字>.md`、`templates/<名字>.md` 是**依赖声明**：文件不在，模型照做就是 `No such file`，而技能本身看起来完全正常。反向同样有问题——文件存在但正文一字没提，等于白放（没人会翻目录）。
+
+一条命令两向都查：
+
+```bash
+python3 scripts/check_skill_refs.py                       # 扫 ~/.hermes/skills（运行态）
+python3 scripts/check_skill_refs.py --root <repo>/skills --root <repo>/skills-local
+python3 scripts/check_skill_refs.py --json refs.json --all # --all 打印被忽略的正文路径
+```
+
+输出三段：**缺失**（正文引用、文件不存在）/ **孤儿**（文件存在、正文没提）/ 忽略（不是文件引用）。退出码 = 是否有缺失。
+
+### 三类误报，别当缺失改
+
+| 形态 | 例 | 为什么不是缺失 |
+|---|---|---|
+| 产品/主题名 | `templates/lagom2/`、`templates/allure/`、`assets/api_` | 是目标站的目录/文件名，不是技能文件 |
+| 占位符 | `references/...`、`skill_view(file_path="references/...")` | 让模型按需加载时的省略写法 |
+| 仓库相对路径 | `apps/desktop/scripts/eval.mjs`、`<hermes-repo>/scripts/run_tests.sh` | 指向 Hermes/minisYf 仓库，不是技能目录 |
+
+判定规则写进脚本：只有**最后一段带扩展名**才算文件引用；`go.mod` / `package.json` / `package-lock.json` / `requirements.txt` 这类构建清单、以及 `_helpers.py` 这种被兄弟脚本 import 的支持模块，都不要求正文点名。
+
+### 路径写法铁律
+
+- 技能自己的文件 → 技能相对：`scripts/<脚本>.sh`、`references/<文档>.md`
+- 别的技能的文件 → 显式相对：`../whmcs-assessment/scripts/batch_sub_extract.py`（写「XX 技能的 scripts/y」会被当成自己目录下的文件）
+- 仓库/上游项目的文件 → 带前缀：`<hermes-repo>/scripts/run_tests.sh`、`<minisYf-repo>/assets/skills-seed.zip`、`apps/desktop/scripts/eval.mjs`
+- 配置/凭据 → 环境变量，不写死在脚本里（写死就等于把 token 推进仓库）
+
+### 修法
+
+**缺失**：真依赖就把文件补进技能目录（能跑的最小实现，不留 TODO）；只是举例就在正文里标明「示例产物」。
+**孤儿**：在 SKILL.md 末尾加 `## Files` 段，一行一个文件 + 一句话说明它解决什么。写清「什么时候用它」而不是复述脚本头注释，否则等于没接线。
+
+### 两个容易漏的同步点
+
+1. **技能库有两份：仓库 `skills/` 与运行态 `~/.hermes/skills/`。** 打包/加载读的是运行态，deploy 读的是仓库。只改一边 = 另一边的缺口照样存在，而扫描器只看一边时会全绿。修完两边都要跑一遍 `check_skill_refs.py`。
+2. **技能包（minisYf）是从运行态打的**，且 `SkillSeeder` 只在 marker 变化时全量覆盖。补了文件必须**同时**：重建 `skills-seed.zip` + 改 `SkillSeeder.MARKER`（`.seeded-vN` → `vN+1`），否则老设备 marker 命中直接跳过，改动永远到不了手机。
+
 ## Pitfalls
 
 1. **改完技能只留在部署目录。** 下次一键部署丢内容，而且丢的是最新版——这个坑不会当场报错，只会在换机器时爆。改完立刻同步回仓库并 commit。
