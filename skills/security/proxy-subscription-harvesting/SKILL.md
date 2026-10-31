@@ -88,4 +88,4 @@ body="subscribe?token=" && body="vless://"
 - `scripts/xray_node_test.py` — vless/trojan/vmess 起 xray 端到端验活（已内置 trojan-TLS 修正）
 - `scripts/build_clash_yaml.py` — 只保留实测通过的节点，生成可导入的最小 Clash 配置
 
-配套：`seagull-pentest` 的 `scripts/fofa_client.py`（签名 API 客户端）用来拉候选 host。
+配套：`../seagull-skills/seagull-pentest/scripts/fofa_client.py`（签名 API 客户端）用来拉候选 host。

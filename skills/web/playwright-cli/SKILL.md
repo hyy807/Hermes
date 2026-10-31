@@ -92,3 +92,7 @@ playwright-cli open --mobile                                 # 移动端布局(�
 - 存储状态(cookie/localStorage): `references/storage-state.md`
 - 运行代码: `references/running-code.md`
 - 追踪/录像/元素属性: `references/tracing.md` / `video-recording.md` / `element-attributes.md`
+
+## Files
+
+- `references/playwright-tests.md` — Playwright 测试写法与常见坑（等待策略、多标签、trace、CI headless）。

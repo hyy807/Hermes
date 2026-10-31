@@ -175,3 +175,11 @@ grep `appLink` / `appLinkAndroid` 就能直接读出拼接规则并算出 URL。
 
 **拿到包先看体积和 dex**：`<100KB` 且 `classes.dex` 只有 1–2KB、`strings` 全量只有一条自家域名 + `loadUrl` → **WebView 壳**，攻击面与 Web 端完全相同，不用再逆向。真包会有 native 库、assets、多个大 dex。这一步能省掉整条逆向投入。
 
+## Files
+
+- `scripts/harvest_static.py` — 静态面：抓页面 + bundle，出接口/参数清单。`harvest_static.py <BASE_URL> <OUTDIR>`。
+- `scripts/spider_mpa.py` — 多页站爬虫，带 cookie 复用。`spider_mpa.py <BASE_URL> <OUTDIR> [--cookie "k=v"] [--max 200]`。
+- `scripts/runtime_harvest.js` — 浏览器内注入脚本：截 XHR/fetch 的**请求体**，专治 RPC 网关（路径里看不出方法名）。配合 preload.js 用。
+- `scripts/build_perm_tree.py` — 把接口清单折成「角色×接口」权限树，标出未鉴权/可越权分支。`build_perm_tree.py <JSDIR> <OUTDIR>`。
+- `scripts/extract_route_map.py` — 从 bundle 静态抽路由表（含懒加载 chunk 里的子路由）。
+- `scripts/preload.js` — CDP/Playwright preload：在页面脚本之前挂 hook，抓 `XMLHttpRequest.send` 与 `window.fetch` 的请求体。

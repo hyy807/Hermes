@@ -148,7 +148,7 @@ A skill exists to make the agent's process more predictable — the agent reliab
 
 ## Tests and Docs (required for repo skills)
 
-1. **Tests** live at `tests/skills/test_<skill>_skill.py` — stdlib + pytest + `unittest.mock` only, no live network. Run via `scripts/run_tests.sh tests/skills/test_<skill>_skill.py -q`. (The generic `tests/tools/test_skill_manager_tool.py` passing proves nothing about YOUR skill.)
+1. **Tests** live at `tests/skills/test_<skill>_skill.py` — stdlib + pytest + `unittest.mock` only, no live network. Run via `<hermes-repo>/scripts/run_tests.sh tests/skills/test_<skill>_skill.py -q`. (The generic `tests/tools/test_skill_manager_tool.py` passing proves nothing about YOUR skill.)
 2. **Docs regen:** run `python website/scripts/generate-skill-docs.py`, then apply scope discipline — the generator rewrites EVERY auto-gen page. `git checkout --` everything that isn't yours; the final diff must show only your SKILL.md, your one per-skill docs page, a one-line catalog row, and a one-line `website/sidebars.ts` insertion (verify with `search_files(pattern='<your-slug>', path='website/sidebars.ts')` — exactly one hit, or the page is an orphan).
 3. **`.env.example`** (only if the skill needs new env vars): one clearly delimited commented block; touch nothing else in the file.
 
@@ -209,6 +209,6 @@ A skill exists to make the agent's process more predictable — the agent reliab
 - [ ] Body follows the modern section order; commands framed through Hermes tools
 - [ ] No machine-local paths anywhere in the file
 - [ ] Each ordered step has a checkable completion criterion
-- [ ] Tests at `tests/skills/test_<skill>_skill.py` pass under `scripts/run_tests.sh`
+- [ ] Tests at `tests/skills/test_<skill>_skill.py` pass under `<hermes-repo>/scripts/run_tests.sh`
 - [ ] Docs regenerated with scope discipline; sidebar has exactly one entry for the slug
 - [ ] `git add` + commit on the intended branch; PR opened

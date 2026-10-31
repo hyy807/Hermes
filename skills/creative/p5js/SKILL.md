@@ -556,3 +556,7 @@ Take a known generative pattern (flow field, particle system, L-system, cellular
    - Medium (interesting): one fish in a school swimming the wrong way, a phone with no notifications, the gap between subway cars
    - Far (abstract): prime numbers, asymptotic curves, the color of 3am
 3. Develop the medium-distance associations — they're specific enough to visualize but unexpected enough to be interesting
+
+## Files
+
+- `scripts/setup.sh` — 依赖自检：node/canvas/ffmpeg 是否齐，缺什么打什么（headless 导出前先跑）。

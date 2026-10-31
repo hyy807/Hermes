@@ -47,7 +47,7 @@ In this order, since each informs the next:
 
 ## Step 5 — report
 
-[`findings-report`](../findings-report/SKILL.md) — synthesize everything under `findings/` into one ranked report using `templates/finding-report.md`. This is the actual deliverable; nothing before this step should be shown to the user as a final answer on its own.
+[`findings-report`](../findings-report/SKILL.md) — synthesize everything under `findings/` into one ranked report using [`findings-report`'s template](../findings-report/templates/finding-report.md). This is the actual deliverable; nothing before this step should be shown to the user as a final answer on its own.
 
 ## Notes for whichever agent is running this
 

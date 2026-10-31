@@ -306,3 +306,7 @@ Exposed VPS often run Flask config panels on ports 8888/8889 (AnyTLS, Sing-box).
 - `references/frp-server-exploitation.md` — FRP config exploitation: frpc.toml field meanings, ME Frp dashboard auth separation from client token, IP ban behavior, port distinction (bind vs dashboard), frpc connection testing
 - `references/telegram-bot-webhook-hijack.md` — Full webhook hijacking: cert generation with IP SAN, systemd webhook receiver, critical `files=` vs `data=` cert upload fix, backend competition (cron guard), error troubleshooting
 - `scripts/extract_credentials.py` — Standalone extraction script
+
+## Files
+
+- `references/live-host-secret-exposure-audit.md` — 活主机密钥暴露面清单：/.env、/.git、备份、CI 配置、前端 bundle、日志，逐项给判定命令。

@@ -218,3 +218,7 @@ summary — WCAG findings are the most load-bearing reason to use the CLI.
 - CLI: `@google/design.md` on npm
 - License of generated DESIGN.md files: whatever the user's project uses;
   the spec itself is Apache-2.0.
+
+## Files
+
+- `templates/starter.md` — DESIGN.md 起始模板：token 分组（color/space/type/radius/motion）+ 导出约定。

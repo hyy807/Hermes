@@ -218,7 +218,7 @@ ssh root@<ip> 'cd /root/<repo> && bash install-yufeng.sh'   # 合并本机技能
 
 ## 八、验证（一条命令）
 
-`deploy.sh` 末尾已自动跑 `scripts/deploy_check.sh`；`install-yufeng.sh` 也会把它放到 `/root/pentest/`。手工复验：
+`deploy.sh` 末尾已自动跑 `scripts/deploy_check.sh`（与本目录 `tune_node.sh` 同放）；`install-yufeng.sh` 也会把它放到 `/root/pentest/`。手工复验：
 
 ```bash
 ssh root@<ip> 'bash /root/pentest/deploy_check.sh'

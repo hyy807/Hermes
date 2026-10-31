@@ -447,3 +447,7 @@ Headings 5/6 collapse to H4. Multiple `>` lines render as separate quote blocks 
 - Always pass `-s` to curl to suppress progress bars (cleaner agent output).
 - Pipe JSON through `jq` when reading: `... | jq '.results[0].properties'`.
 - Notion also ships an MCP server now (`Notion MCP`, ~91% more token-efficient on DB ops than the previous version) — wire it via Hermes' MCP support if you want streaming Notion access from inside a session, but the paths above are enough for most one-shot tasks.
+
+## Files
+
+- `references/block-types.md` — Notion block 类型与 JSON 结构速查（写 page/DB 时对照用，避免构造出 API 不认的 block）。

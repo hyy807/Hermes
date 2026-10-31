@@ -98,10 +98,10 @@ Use `terminal` and the canonical runner for noninteractive diagnostics:
 
 ```bash
 # Show locals in tracebacks without pdb:
-scripts/run_tests.sh tests/path/to/test_file.py --showlocals --tb=long
+<hermes-repo>/scripts/run_tests.sh tests/path/to/test_file.py --showlocals --tb=long
 ```
 
-`scripts/run_tests.sh` captures each file in a separate subprocess, so `--pdb`
+`<hermes-repo>/scripts/run_tests.sh` captures each file in a separate subprocess, so `--pdb`
 or `--trace` cannot provide an interactive prompt there. For an interactive
 debugger only, use the independent development/test interpreter prepared in
 Recipe 5 (never a production generation):
@@ -323,7 +323,7 @@ Long-lived. Use `remote-pdb` at a handler, or `debugpy` with `--wait-for-client`
 
 ## Common Pitfalls
 
-1. **pdb under a parallel/output-capturing runner silently does nothing.** You won't see the prompt, the test just hangs (true of pytest-xdist and of `scripts/run_tests.sh`'s captured per-file subprocesses). Run pytest directly on a single file for interactive debugging.
+1. **pdb under a parallel/output-capturing runner silently does nothing.** You won't see the prompt, the test just hangs (true of pytest-xdist and of `<hermes-repo>/scripts/run_tests.sh`'s captured per-file subprocesses). Run pytest directly on a single file for interactive debugging.
 
 2. **`breakpoint()` in CI / non-TTY contexts hangs the process.** Safe locally; never commit it. Add a pre-commit grep as a safety net.
 
@@ -340,7 +340,7 @@ Long-lived. Use `remote-pdb` at a handler, or `debugpy` with `--wait-for-client`
 
 7. **asyncio.** `pdb` works in coroutines but `await` inside pdb requires Python 3.13+ or `await` from `interact` mode on older versions. For 3.11/3.12, use `asyncio.run_coroutine_threadsafe` tricks or `!stmt`-based awaits via `asyncio.ensure_future`.
 
-8. **`scripts/run_tests.sh` strips credentials and sets `HOME=<tmpdir>`.** If your bug depends on user config or real API keys, it won't reproduce under the wrapper. Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
+8. **`<hermes-repo>/scripts/run_tests.sh` strips credentials and sets `HOME=<tmpdir>`.** If your bug depends on user config or real API keys, it won't reproduce under the wrapper. Debug with raw `pytest` first to repro, then re-confirm under the wrapper.
 
 9. **Forking / multiprocessing.** pdb does not follow forks. Each child needs its own `breakpoint()` or `set_trace()`. For Hermes subagents, debug one process at a time.
 
@@ -369,7 +369,7 @@ breakpoint()
 
 **"This test passes in isolation but fails in the suite."**
 ```bash
-scripts/run_tests.sh tests/the_test.py   # confirm it fails under the isolated runner first
+<hermes-repo>/scripts/run_tests.sh tests/the_test.py   # confirm it fails under the isolated runner first
 # For interactive debugging, or if it only fails WITH other tests, use the
 # independent development/test interpreter prepared in Recipe 5:
 .venv/bin/python -m pytest tests/ -x --pdb

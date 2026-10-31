@@ -182,3 +182,9 @@ relay-admin-v2/.env                       # RELAY_ADMIN_PASSWORD 明文
 4. **两阶段投递**是 patch 类 RCE 的标准打法：第一阶段落盘、第二阶段触发，之间所有状态都能用只读原语核实
 5. **僵尸事务要耐心**：备份僵死 20-40 分钟是常态，用 `updatedAt` + 备份产物存在性判断真死假死
 6. **每一步都要可核验的落盘证据**（日志文件、API 返回、SSH id 输出），"应该成功了"不算数
+
+## Files
+
+- `scripts/chunkread.py` — 3X-UI 任意文件读 PoC（分块读，绕过一次性大响应被拦/截断），用法见脚本头。
+- `scripts/main.go` — 面板侧利用程序（Go）：登录态复用 + 文件读 + 配置导出。`go build` 后单文件跑。
+- `scripts/cloud_update_shim.sh` — 更新链路 shim：把面板下发的更新包换成自己的，验证供应链面（只用于授权评估，跑完回滚）。

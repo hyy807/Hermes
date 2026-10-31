@@ -255,3 +255,7 @@ lists exactly the cited ids with the ledger's URLs, and the cited share of
 source-bearing sentences meets the threshold. Read the warnings even when the
 exit code is 0 — uncited registered sources usually mean a claim lost its
 attribution during editing.
+
+## Files
+
+- `references/grounding-rationale.md` — 为什么用编号 ledger 而不是行内链接（引用可核对、可去重、可审计的依据）。

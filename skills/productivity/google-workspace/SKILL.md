@@ -341,3 +341,7 @@ All commands return JSON. Parse with `jq` or read directly. Key fields:
 ```bash
 $GSETUP --revoke
 ```
+
+## Files
+
+- `scripts/gws_bridge.py` — 把 Hermes 的 OAuth token 桥给 `gws` CLI 用（免二次登录）。

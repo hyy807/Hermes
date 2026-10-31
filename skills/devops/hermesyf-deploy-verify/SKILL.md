@@ -84,3 +84,12 @@ PY
 - **对 `deploy.sh` 跑 `bash -n` 也会被同一条策略拦掉**：文件里有 `hermes gateway restart` 字面量，扫描器按内容命中就拒执行，看起来像"语法检查失败"。要验语法就 `grep -nE '^[A-Z_]+=' deploy.sh` 抽查变量定义（改了个 `${BLUE}` 实际未定义——颜色变量只有 GREEN/CYAN/RED/NC），或把待测片段单独写成临时脚本再 `bash -n`。
 - `chmod +x` 和脚本执行不要写成一条被拦的命令，分开跑，否则 chmod 也没执行，下一步报 Permission denied。
 - 重跑 deploy.sh 会 `git reset --hard`，机器上未提交的改动全丢；改过代码先 push。
+
+## 框架加固：声明 ≠ 强制
+
+部署能跑起来 ≠ 约束真生效。契约里有 `egress` 字段不等于流量走这个出口，写了 `scope` 不等于执行器认；
+`startswith` 匹配 scope 会被 `a.com.evil.net` 骗过；`confirmed` finding 不绑具体证据 id 就等于自称复现过。
+汇报时严格分开「已强制（有对照实验）」和「仅记录（只是字段）」。
+
+代码级 before/after 对照与自查清单见 `references/framework-hardening.md`（8 条：scope 匹配、fail-closed、出口验证、
+证据绑定、close 门禁、只读封存）。

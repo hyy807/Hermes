@@ -54,3 +54,10 @@ Supporting assets: `scripts/gh-env.sh` + `scripts/git-credential-token.py`
 - The workflow's own reference file defines done for that task.
 - Cross-cutting: every claim about remote state (CI, merge, release,
   issue state) is backed by a fresh `gh` read, never memory.
+
+## Files
+
+- `templates/bug-report.md` — issue 模板：复现步骤 + 期望/实际 + 环境。
+- `templates/feature-request.md` — feature request 模板：问题 → 提案 → 取舍。
+- `templates/pr-body-bugfix.md` — PR 模板（修 bug）：根因、改动、验证命令、回归风险。
+- `templates/pr-body-feature.md` — PR 模板（新功能）：动机、设计、测试、向后兼容。
