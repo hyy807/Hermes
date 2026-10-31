@@ -36,7 +36,7 @@ if [ ! -d "$INSTALL_DIR/.git" ]; then
   echo -e "${RED}✗ 未找到仓库 $INSTALL_DIR${NC}"
   echo "  首次部署请跑（私有仓库要带 token）："
   echo "  export HERMESYF_TOKEN=ghp_xxx"
-  echo "  curl -fsSL -H \"Authorization: token \$HERMESYF_TOKEN\" https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh | bash"
+  echo "  curl -fsSL -H \"Authorization: token $HERMESYF_TOKEN\" https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash"
   exit 1
 fi
 
