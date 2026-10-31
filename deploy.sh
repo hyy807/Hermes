@@ -3,13 +3,13 @@
 # HermesYF 一键部署脚本 — 干净机器上一条命令完成安装
 # ============================================================================
 # 用法（在目标机上，root 用户）—— 公开库直接跑；若仓库改为私有，带 token：
-#   curl -fsSL https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
 #   私有库时：
 #   export HERMESYF_TOKEN=ghp_xxx
 #   curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
-#     https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh | bash
+#     https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
 # 或先 clone 再本地跑（clone 用 token，见下）:
-#   git clone https://x-access-token:$HERMESYF_TOKEN@github.com/Gohappyflyy/HermesYF.git /root/HermesYF
+#   git clone https://x-access-token:$HERMESYF_TOKEN@github.com/llyufenggotest/HermesYF.git /root/HermesYF
 #   bash /root/HermesYF/deploy.sh
 #
 # 流程: 装 git/curl → clone 仓库到 /root/HermesYF → setup-hermes.sh
@@ -17,7 +17,7 @@
 set -e
 
 INSTALL_DIR="${INSTALL_DIR:-/root/HermesYF}"
-REPO_SLUG="Gohappyflyy/HermesYF"
+REPO_SLUG="llyufenggotest/HermesYF"
 REPO_URL="https://github.com/${REPO_SLUG}.git"
 
 # 私有库凭据：HERMESYF_TOKEN > GH_TOKEN > ~/.git-credentials

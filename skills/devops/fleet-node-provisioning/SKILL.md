@@ -99,7 +99,7 @@ apt-get install -y -qq git curl unzip ca-certificates python3 python3-pip build-
 当前仓库**已公开**，一键命令直接可用：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh | bash
+curl -fsSL https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
 ```
 
 若仓库又改回私有：无凭据会 404（`curl -f` 静默失败、`git clone` 报 `Repository not found`），改用：
@@ -107,7 +107,7 @@ curl -fsSL https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh
 ```bash
 export HERMESYF_TOKEN=ghp_xxx      # 能读 HermesYF 的 PAT
 curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
-  https://raw.githubusercontent.com/Gohappyflyy/HermesYF/main/deploy.sh | bash
+  https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
 ```
 
 deploy.sh 凭据优先级：`HERMESYF_TOKEN` > `GH_TOKEN` > `~/.git-credentials`；clone 完会 `git remote set-url` 把 token 从 `.git/config` 摘掉，并写 `~/.git-credentials`(0600)，后续 `update.sh` 直接能用。拿不到 token 时明确报错退出，不会挂在用户名提示上。
