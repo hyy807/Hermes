@@ -2,7 +2,7 @@
 name: v2board-whmcs-module-hunt
 description: "Use when 找 v2board WHMCS 模块同类洞 / 机场 .git 泄露。"
 version: 1.0.0
-author: 御风
+author: 么西么西
 license: MIT
 metadata:
   hermes:

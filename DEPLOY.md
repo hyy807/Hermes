@@ -61,7 +61,7 @@ hermes gateway restart
 ├── skills/pentest/     236  狩猎方法论 + 攻击执行（hunt-* / offensive-*）
 └── skills/            其它  非渗透技能（创作、文档、研究等）
 
-~/.hermes/SOUL.md           御风人格
+~/.hermes/SOUL.md           么西么西人格
 ~/AGENTS.md                 工作指南（含目标→技能映射表 + 开工自检硬规则）
 ~/.hermes/plugins/yufeng-armor/
 ~/.hermes/memories/         MEMORY.md + USER.md

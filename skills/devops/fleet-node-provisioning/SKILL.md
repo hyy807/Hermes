@@ -2,7 +2,7 @@
 name: fleet-node-provisioning
 description: "Use when provisioning a fresh VPS as a fleet node."
 version: 1.0.0
-author: 御风
+author: 么西么西
 license: MIT
 platforms: [linux]
 metadata:
@@ -13,11 +13,11 @@ metadata:
 
 # 新节点上线（裸 VPS → 满血 HermesYF 节点）
 
-风哥的机群用来跑扫描 / 撞库分片，每台装同一套 HermesYF。新机器到手时他只给 **IP + 端口 + 用户 + 密码**，剩下全由我做完：加固、调优、部署、验证、登记。
+么西么西的机群用来跑扫描 / 撞库分片，每台装同一套 HermesYF。新机器到手时他只给 **IP + 端口 + 用户 + 密码**，剩下全由我做完：加固、调优、部署、验证、登记。
 
 ## When to Use
 
-- 风哥发来一台新服务器（「再给你一台强力小弟」）
+- 么西么西发来一台新服务器（「再给你一台强力小弟」）
 - 已有节点重装 / 迁移 / 换机房
 - 要把 HermesYF 部署到一台干净 Debian/Ubuntu
 
@@ -38,7 +38,7 @@ ssh -o BatchMode=yes root@<ip> 'hostname'      # 免密验证
 
 免密不通先查目录 700 / 文件 600，别退回密码硬用——机群里每台都靠 key，混着密码登录迟早出错。
 
-**只有 IP 没密码时**：直接给风哥公钥，让他贴进 `authorized_keys`，比在聊天里传密码干净。
+**只有 IP 没密码时**：直接给么西么西公钥，让他贴进 `authorized_keys`，比在聊天里传密码干净。
 
 ## 二、盘点规格
 
@@ -82,7 +82,7 @@ sysctl -n net.core.default_qdisc                      # fq
 
 内核 6.12 主线**只有 BBRv1**。要 v3 得换 XanMod 内核或自编译模块，在 AWS EC2 上换内核要动 GRUB + ENA/NVMe 驱动，参数不对会失联（只能走控制台救援）。
 
-**默认不上 v3**，先用 v1 + fq，并用实测带宽证明够用（见第九节）。只有风哥明确要求、且机器不是主力节点时才考虑换内核，换之前先拍快照并准备回滚。
+**默认不上 v3**，先用 v1 + fq，并用实测带宽证明够用（见第九节）。只有么西么西明确要求、且机器不是主力节点时才考虑换内核，换之前先拍快照并准备回滚。
 
 ## 四、装基础依赖
 
@@ -353,7 +353,7 @@ ss -lnt | grep -cE ':12[0-9]{3}'                        # 端口池数量，应�
 
 ## 十二、交接：不代配 API / TG
 
-部署到「能登录」为止就停。API key、Telegram bot token、网关启动由风哥自己做，我**只交命令**：
+部署到「能登录」为止就停。API key、Telegram bot token、网关启动由么西么西自己做，我**只交命令**：
 
 ```bash
 cd /root/<repo> && source ./activate

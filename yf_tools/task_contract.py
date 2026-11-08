@@ -2,7 +2,7 @@
 
 Why this exists
 ---------------
-A prompt that says "targets come from 风哥" is advice; it does not stop a scanner. This module
+A prompt that says "targets come from 么西么西" is advice; it does not stop a scanner. This module
 turns that advice into a file the executors read, and a completion check that fails when the
 evidence does not back the claim.
 

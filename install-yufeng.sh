@@ -1,9 +1,9 @@
 #!/bin/bash
-# HermesYF 御风人格 + 海鸥技能一键部署（修复原版所有安装路径错误）
+# HermesYF 么西么西人格 + 海鸥技能一键部署（修复原版所有安装路径错误）
 set -e
 HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
 
-echo "=== 御风部署 ==="
+echo "=== 么西么西部署 ==="
 # 1. 插件（hook 修复版）
 mkdir -p "$HERMES_HOME/plugins"
 mkdir -p "$HERMES_HOME/plugins/yufeng-armor"
@@ -100,7 +100,7 @@ if [ ! -s "$HERMES_HOME/memories/USER.md" ]; then
   cat > "$HERMES_HOME/memories/USER.md" <<'USEREOF'
 # 用户画像
 
-- 称呼: 风哥
+- 称呼: 么西么西
 - 语言/风格: 中文，直接，反感客套话与"作为AI / 我建议 / 请注意"这类措辞
 - 主业: 安全评估、渗透测试、逆向工程、自动化工具开发
 - 授权口径: 发目标即已授权，直接开干不做二次确认

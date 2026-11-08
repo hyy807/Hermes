@@ -66,7 +66,7 @@ if contract.get("allowed_override") is False and not in_scope(...):
 | socks5 | `--egress-socks5` 字符串 | naabu/scanner 真正带 `-proxy socks5://...`，且进程失败时不回落直连 |
 
 汇报时分开写：**「已强制」（有对照实验）/「仅记录」（契约字段）。** 把后者说成安全边界，
-就是把自己的假设当成事实交给风哥。
+就是把自己的假设当成事实交给么西么西。
 
 `--ports` 这类会产生大量外部发包的动作，要求契约里**显式**写 `egress_socks5`，
 不允许从 `egress` 推断——否则一个 HTTP 代理字段会被当成「扫描也走代理」的证据。

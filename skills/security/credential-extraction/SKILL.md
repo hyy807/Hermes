@@ -1,7 +1,7 @@
 ---
 name: credential-extraction
 version: 1.0.0
-author: "Gohappyflyy, 御风"
+author: "Gohappyflyy, 么西么西"
 license: MIT
 platforms: [linux, macos, windows]
 description: "Extract…"

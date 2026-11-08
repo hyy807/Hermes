@@ -2,7 +2,7 @@
 name: blitzstrike-workflow
 description: "Use when starting a pentest: tool-by-phase map."
 version: 1.0.0
-author: "御风"
+author: "么西么西"
 license: MIT
 platforms: [linux]
 metadata:
@@ -24,7 +24,7 @@ metadata:
 
 | 阶段 | 先试这些 MCP 工具 | 再试外部工具 |
 |---|---|---|
-| 资产测绘 | — | **风哥 FOFA Worker**（`fofa_cli.py`，见下节） |
+| 资产测绘 | — | **么西么西 FOFA Worker**（`fofa_cli.py`，见下节） |
 | 侦察/指纹 | `live_recon`、`asset_discovery`、`active_scan`、`detect_framework`、`detect_waf` | httpx、whatweb、wafw00f、subfinder、amass |
 | 端口 | `port_correlation` | naabu、nmap、rustscan（**别手写 python socket**） |
 | 端点/参数 | `param_surface`、`surface_map`、`eagle_eye` | katana、gau、subjs、arjun、ffuf、feroxbuster |
@@ -54,9 +54,9 @@ metadata:
 5. **工具用了没效果 ≠ 工具没用**。检查参数（登录态/代理/UA/超时）再下结论。
 6. **「多台机器并行」先确认出口真的不同**。同机房的机器出口经常同段（NAT/同一网关），三台并行 = 一个 IP 打了三倍量，只会更快被封。开工前逐台 `ssh host 'curl -s -m 10 https://api.ipify.org'` 对一下。
 
-## FOFA 资产测绘（风哥自建 Worker）
+## FOFA 资产测绘（么西么西自建 Worker）
 
-blitzstrike 的 `fofa_search` 需要 `FOFA_EMAIL/FOFA_KEY`，**本机未配**；改用风哥的 Worker：
+blitzstrike 的 `fofa_search` 需要 `FOFA_EMAIL/FOFA_KEY`，**本机未配**；改用么西么西的 Worker：
 
 ```bash
 cd /root/.hermes/cache/scratch/fofa

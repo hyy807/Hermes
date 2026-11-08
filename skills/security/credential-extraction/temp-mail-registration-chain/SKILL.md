@@ -1,7 +1,7 @@
 ---
 name: temp-mail-registration-chain
 version: 1.0.0
-author: 御风
+author: 么西么西
 license: MIT
 platforms: [linux, macos, windows]
 description: "Use when 批量注册/落号需要邮箱验证码（moakt/mail.tm 临时邮箱收码链）。"
@@ -35,7 +35,7 @@ metadata:
 4. **解析验证码**：详情页正文锚文本定位，别全文正则
 5. **立即注册/登录**：从拿到码到发出请求控制在 1 分钟内
 
-## moakt.com 工作流（风哥指定主力，mail.tm 被目标屏蔽时的替代）
+## moakt.com 工作流（么西么西指定主力，mail.tm 被目标屏蔽时的替代）
 
 ```python
 # browser_exec 内执行

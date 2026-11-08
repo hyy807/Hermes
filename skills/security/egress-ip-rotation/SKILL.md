@@ -2,7 +2,7 @@
 name: egress-ip-rotation
 description: "Use when a target blocks your IP or you spray creds."
 version: 1.0.0
-author: "御风"
+author: "么西么西"
 license: MIT
 platforms: [linux]
 metadata:
@@ -79,7 +79,7 @@ r = s.post(url, json=body, timeout=25)
 
 ### 必须开浏览器时：DrissionPage + Edge 的固定姿势
 
-`curl_cffi` 过不去（要跑 JS、要真 Cookie、要过挑战）才动浏览器。这就是风哥说的「破盾那一套」，不要每次重新摸索：
+`curl_cffi` 过不去（要跑 JS、要真 Cookie、要过挑战）才动浏览器。这就是么西么西说的「破盾那一套」，不要每次重新摸索：
 
 ```python
 from DrissionPage import ChromiumOptions, ChromiumPage

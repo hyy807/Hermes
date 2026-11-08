@@ -296,7 +296,7 @@ grep -rhoaE '/api/[a-zA-Z0-9_./-]+' js | sort -u
 
 ## H. 单次任务清单
 
-1. 锁定目标（风哥给的就是范围）
+1. 锁定目标（么西么西给的就是范围）
 2. **阅读** `scripts/harvest_static.py` → 按目标调整 → 运行 → 审 `api_static.txt`、`routes.txt`
 3. **Phase 1b**：path 锚点扩窗 + 绑定层 → `param_candidates.json`（J 节）
 4. 逆向 A1/A2/A3 → 写站点专属 `config.json`
