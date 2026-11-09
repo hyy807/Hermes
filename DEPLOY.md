@@ -3,7 +3,7 @@
 ## 首次部署（干净机器）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
+curl -fsSL https://raw.githubusercontent.com/hyy807/HermesYF/main/deploy.sh | bash
 ```
 
 仓库目前是公开的，上面这条直接可用。<br>
@@ -12,7 +12,7 @@ curl -fsSL https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy
 ```bash
 export HERMESYF_TOKEN=ghp_xxx      # 能读 HermesYF 的 PAT
 curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
-  https://raw.githubusercontent.com/llyufenggotest/HermesYF/main/deploy.sh | bash
+  https://raw.githubusercontent.com/hyy807/HermesYF/main/deploy.sh | bash
 ```
 
 deploy.sh 两种都支持：有 token 就用 token clone，没有就走公开 URL。凭据会写进 `~/.git-credentials`（0600），token 不会留在 `.git/config` 里，后续 `update.sh` 直接可用。

@@ -2,7 +2,7 @@
 
 基于 NousResearch/hermes-agent，自有或明确授权资产的低噪声安全评估开发分支。
 
-上游基线：`5ba559c9e4b1c8397df7788e319ab634144ca728`。保留上游许可证与原始作者历史（初次克隆为 shallow，远端保留可达基线）。`upstream` 为官方项目，`origin` 为 llyufenggotest/HermesYF。当前不改变核心运行时、审批、鉴权与模型策略，也没有切换在线部署。
+上游基线：`5ba559c9e4b1c8397df7788e319ab634144ca728`。保留上游许可证与原始作者历史（初次克隆为 shallow，远端保留可达基线）。`upstream` 为官方项目，`origin` 为 hyy807/HermesYF。当前不改变核心运行时、审批、鉴权与模型策略，也没有切换在线部署。
 
 ## 首批交付
 
