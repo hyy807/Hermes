@@ -15,7 +15,7 @@ metadata:
 
 维护私有 Hermes fork 的技能库：审计质量、去说教、去重、保证仓库与部署目录一致、验证一键部署满血。
 
-么西么西的仓库：`/root/HermesYF`（GitHub `hyy807/HermesYF`）。技能源在仓库 `skills/`，部署目标是 `~/.hermes/skills/`，由 `install-yufeng.sh` 复制。
+么西么西的仓库：`/root/HermesYF`（GitHub `hyy807/Hermes`）。技能源在仓库 `skills/`，部署目标是 `~/.hermes/skills/`，由 `install-yufeng.sh` 复制。
 
 ## When to Use
 
