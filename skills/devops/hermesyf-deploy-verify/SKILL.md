@@ -1,9 +1,9 @@
 ---
 name: hermesyf-deploy-verify
-description: "Use when 新机部署 HermesYF 后验收 / 部署自检 / 技能记忆没同步。一条命令跑 14 项检查…"
+description: "Use when 新机部署 Hermes 后验收 / 部署自检 / 技能记忆没同步。一条命令跑 14 项检查…"
 ---
 
-# HermesYF 新机部署验收
+# Hermes 新机部署验收
 
 `deploy.sh` 跑完不等于装齐。它中间有 4 段（clone → setup-hermes → install-yufeng → install-blitzstrike），任何一段静默失败，机器看着能用但技能库/记忆/代理是残的。部署完必须跑验收。
 
@@ -11,8 +11,8 @@ description: "Use when 新机部署 HermesYF 后验收 / 部署自检 / 技能�
 
 ```bash
 # 仓库内副本（新机只有这个；deploy.sh 结尾会自动调它）
-bash /root/HermesYF/scripts/deploy_check.sh              # 本机
-bash /root/HermesYF/scripts/deploy_check.sh <ip>         # 远程（脚本自己 ssh 推过去执行）
+bash /root/Hermes/scripts/deploy_check.sh              # 本机
+bash /root/Hermes/scripts/deploy_check.sh <ip>         # 远程（脚本自己 ssh 推过去执行）
 # 老机器上另有 /root/pentest/deploy_check.sh 的常备副本，两者内容一致
 ```
 
@@ -26,9 +26,9 @@ bash /root/HermesYF/scripts/deploy_check.sh <ip>         # 远程（脚本自己
 
 | 检查 | FAIL 含义 | 修法 |
 |---|---|---|
-| 仓库 | `/root/HermesYF` 不存在 | deploy.sh 在 clone 阶段断了，看网络/磁盘 |
+| 仓库 | `/root/Hermes` 不存在 | deploy.sh 在 clone 阶段断了，看网络/磁盘 |
 | 仓库未提交改动 >0 | 只是 WARN | 本地改的要 push，否则新机拿不到 |
-| 技能装载数 <300 | `install-yufeng.sh` 没跑或合并失败 | `bash /root/HermesYF/install-yufeng.sh` |
+| 技能装载数 <300 | `install-yufeng.sh` 没跑或合并失败 | `bash /root/Hermes/install-yufeng.sh` |
 | 技能数 =0 | HERMES_HOME 指错或 `~/.hermes/skills` 没建 | 查 `echo $HERMES_HOME`、确认 profile |
 | 记忆 MEMORY/USER 为空 | 记忆初始化没执行 | 同上，重跑 install-yufeng.sh |
 | mihomo 进程 | 代理没起 | `cd /root && nohup ./mihomo -d /root -f /root/Sxrconfig.yaml &` |
@@ -37,7 +37,7 @@ bash /root/HermesYF/scripts/deploy_check.sh <ip>         # 远程（脚本自己
 | 代理出口 IP 空 | 7890 通不了外网 | 节点全挂/订阅过期，换订阅 |
 | 工具缺失 | /root/go/bin 没进 PATH | `export PATH=/root/go/bin:$PATH`，或 `ln -sf` 到 /usr/local/bin |
 | 人格注入 FAIL | 插件没注册 pre_llm_call | 见下节「人格退化排查」 |
-| SOUL 判断边界节 WARN | SOUL 是旧版 | `cp /root/HermesYF/SOUL-yufeng.md ~/.hermes/SOUL.md` + 重启 gateway |
+| SOUL 判断边界节 WARN | SOUL 是旧版 | `cp /root/Hermes/SOUL-yufeng.md ~/.hermes/SOUL.md` + 重启 gateway |
 
 ## 出口 IP 必看
 

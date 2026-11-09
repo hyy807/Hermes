@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# HermesYF 一键部署脚本 — 干净机器上一条命令完成安装
+# Hermes 一键部署脚本 — 干净机器上一条命令完成安装
 # ============================================================================
 # 用法（在目标机上，root 用户）—— 公开库直接跑；若仓库改为私有，带 token：
 #   curl -fsSL https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
@@ -9,14 +9,14 @@
 #   curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
 #     https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
 # 或先 clone 再本地跑（clone 用 token，见下）:
-#   git clone https://x-access-token:$HERMESYF_TOKEN@github.com/hyy807/Hermes.git /root/HermesYF
-#   bash /root/HermesYF/deploy.sh
+#   git clone https://x-access-token:$HERMESYF_TOKEN@github.com/hyy807/Hermes.git /root/Hermes
+#   bash /root/Hermes/deploy.sh
 #
-# 流程: 装 git/curl → clone 仓库到 /root/HermesYF → setup-hermes.sh
+# 流程: 装 git/curl → clone 仓库到 /root/Hermes → setup-hermes.sh
 # ============================================================================
 set -e
 
-INSTALL_DIR="${INSTALL_DIR:-/root/HermesYF}"
+INSTALL_DIR="${INSTALL_DIR:-/root/Hermes}"
 REPO_SLUG="hyy807/Hermes"
 REPO_URL="https://github.com/${REPO_SLUG}.git"
 
@@ -31,7 +31,7 @@ fi
 
 GREEN='\033[0;32m'; CYAN='\033[0;36m'; RED='\033[0;31m'; NC='\033[0m'
 
-echo -e "${CYAN}☤ HermesYF 一键部署${NC}"
+echo -e "${CYAN}☤ Hermes 一键部署${NC}"
 echo ""
 
 # 1. 依赖工具
@@ -106,6 +106,6 @@ if [ -f "$INSTALL_DIR/scripts/deploy_check.sh" ]; then
 fi
 echo ""
 echo "后续:"
-echo "  source /root/HermesYF/activate   # 激活环境"
+echo "  source /root/Hermes/activate   # 激活环境"
 echo "  hermes setup                      # 配置 API keys"
 echo "  hermes gateway restart            # 重启网关使么西么西人格生效"

@@ -140,7 +140,7 @@ def main() -> int:
             if domain == f or domain.endswith("." + f.lstrip("*.")):
                 raise SystemExit(f"{domain} 命中契约 forbidden: {f}")
         try:
-            sys.path.insert(0, os.environ.get("HERMESYF_REPO", "/root/HermesYF"))
+            sys.path.insert(0, os.environ.get("HERMESYF_REPO", "/root/Hermes"))
             from yf_tools.assessment_run import _target_allowed
         except Exception as exc:
             # 范围校验器加载不了就一个包都不发：宁可停，也不能在没校验范围的情况下扫
@@ -270,7 +270,7 @@ def main() -> int:
 
     # 6. 登记进任务契约（可选）
     if args.contract:
-        repo = os.environ.get("HERMESYF_REPO", "/root/HermesYF")
+        repo = os.environ.get("HERMESYF_REPO", "/root/Hermes")
         registered, failed_reg = 0, []
         for f in ("live.jsonl", "live.txt", "tech.txt", "hosts.txt", "summary.json"):
             fp = outdir / f

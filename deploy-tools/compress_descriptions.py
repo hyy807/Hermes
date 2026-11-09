@@ -19,7 +19,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path("/root/HermesYF/skills")
+ROOT = Path("/root/Hermes/skills")
 LIMIT = 57
 
 

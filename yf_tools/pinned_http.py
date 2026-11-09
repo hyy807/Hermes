@@ -114,7 +114,7 @@ def head(policy, host, port, scheme, path, *, ssl_context=None):
         connection = PinnedHTTPConnection(host, port, destinations[0])
     try:
         # http.client creates Host from self.host, never the numeric destination.
-        connection.request('HEAD', path or '/', headers={'User-Agent': 'HermesYF-HTTPBaseline/0.1'})
+        connection.request('HEAD', path or '/', headers={'User-Agent': 'Hermes-HTTPBaseline/0.1'})
         with connection.getresponse() as response:
             yield response
     finally:

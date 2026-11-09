@@ -74,7 +74,7 @@ python3 /root/pentest/kickoff.py <目标域名> [别名...]
 python3 /root/pentest/kickoff.py <目标> --contract /root/apks/contracts/<目标>.json
 
 # 补范围/出口/交付物，然后转 ready
-cd /root/HermesYF
+cd /root/Hermes
 python3 -m yf_tools.task_contract set <契约> --egress 127.0.0.1:7890 --deliverable <产物文件名>
 python3 -m yf_tools.task_contract state <契约> ready
 python3 -m yf_tools.task_contract state <契约> running

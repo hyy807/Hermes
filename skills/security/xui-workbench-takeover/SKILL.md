@@ -2,7 +2,7 @@
 name: xui-workbench-takeover
 description: "Use when target runs a 3X-UI multi-panel workbench"
 version: 1.0.0
-author: "Gohappyflyy, HermesYF"
+author: "Gohappyflyy, Hermes"
 license: MIT
 platforms: [linux]
 ---

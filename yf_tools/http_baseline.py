@@ -43,7 +43,7 @@ def inspect(policy, target):
             return transport_error()
     # Disable ambient proxy routing; default TLS verification remains enabled.
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
-    req = urllib.request.Request(target, method='HEAD', headers={'User-Agent':'HermesYF-HTTPBaseline/0.1'})
+    req = urllib.request.Request(target, method='HEAD', headers={'User-Agent':'Hermes-HTTPBaseline/0.1'})
     try:
         response = opener.open(req, timeout=10)
     except urllib.error.HTTPError as exc:

@@ -2,7 +2,7 @@
 name: seagull-game-hack
 description: "游戏辅助开发: entity→ViewMatrix→W2S→overlay/aim 完整代码、trainer 架…"
 version: 1.0.0
-author: "Gohappyflyy (原 laoshu666), HermesYF 修复版"
+author: "Gohappyflyy (原 laoshu666), Hermes 修复版"
 license: MIT
 platforms: [linux, macos, windows]
 ---

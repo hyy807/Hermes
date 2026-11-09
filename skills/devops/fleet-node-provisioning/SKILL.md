@@ -11,15 +11,15 @@ metadata:
     related_skills: [skill-library-maintenance, egress-ip-rotation]
 ---
 
-# 新节点上线（裸 VPS → 满血 HermesYF 节点）
+# 新节点上线（裸 VPS → 满血 Hermes 节点）
 
-么西么西的机群用来跑扫描 / 撞库分片，每台装同一套 HermesYF。新机器到手时他只给 **IP + 端口 + 用户 + 密码**，剩下全由我做完：加固、调优、部署、验证、登记。
+么西么西的机群用来跑扫描 / 撞库分片，每台装同一套 Hermes。新机器到手时他只给 **IP + 端口 + 用户 + 密码**，剩下全由我做完：加固、调优、部署、验证、登记。
 
 ## When to Use
 
 - 么西么西发来一台新服务器（「再给你一台强力小弟」）
 - 已有节点重装 / 迁移 / 换机房
-- 要把 HermesYF 部署到一台干净 Debian/Ubuntu
+- 要把 Hermes 部署到一台干净 Debian/Ubuntu
 
 ## 一、连上去，先换成密钥登录
 
@@ -105,7 +105,7 @@ curl -fsSL https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
 若仓库又改回私有：无凭据会 404（`curl -f` 静默失败、`git clone` 报 `Repository not found`），改用：
 
 ```bash
-export HERMESYF_TOKEN=ghp_xxx      # 能读 HermesYF 的 PAT
+export HERMESYF_TOKEN=ghp_xxx      # 能读 Hermes 的 PAT
 curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
   https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
 ```

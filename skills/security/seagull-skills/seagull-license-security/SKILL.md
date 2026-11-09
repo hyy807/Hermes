@@ -2,7 +2,7 @@
 name: seagull-license-security
 description: "授权验证流恢复: 验证入口定位、关键比较点、patch-point 图、本地 verifier。"
 version: 1.0.0
-author: "Gohappyflyy (原 laoshu666), HermesYF 修复版"
+author: "Gohappyflyy (原 laoshu666), Hermes 修复版"
 license: MIT
 platforms: [linux, macos, windows]
 ---

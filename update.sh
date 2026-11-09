@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # ============================================================================
-# HermesYF 更新脚本 —— 已部署过的机器用这个，不重装 Hermes 本体
+# Hermes 更新脚本 —— 已部署过的机器用这个，不重装 Hermes 本体
 # ============================================================================
 # 用法：
-#   bash /root/HermesYF/update.sh              # 更新人格 + 技能 + 运维脚本
-#   bash /root/HermesYF/update.sh --mcp        # 同时重装 Blitz Strike MCP
-#   bash /root/HermesYF/update.sh --prune      # 完全对齐（删掉仓库里已没有的技能）
-#   bash /root/HermesYF/update.sh --prune --mcp
+#   bash /root/Hermes/update.sh              # 更新人格 + 技能 + 运维脚本
+#   bash /root/Hermes/update.sh --mcp        # 同时重装 Blitz Strike MCP
+#   bash /root/Hermes/update.sh --prune      # 完全对齐（删掉仓库里已没有的技能）
+#   bash /root/Hermes/update.sh --prune --mcp
 #
 # 常见场景：
 #   - 么西么西更新了仓库，朋友想同步 → 直接跑这个
@@ -14,7 +14,7 @@
 # ============================================================================
 set -e
 
-INSTALL_DIR="${INSTALL_DIR:-/root/HermesYF}"
+INSTALL_DIR="${INSTALL_DIR:-/root/Hermes}"
 HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
 GREEN='\033[0;32m'; CYAN='\033[0;36m'; RED='\033[0;31m'; YELLOW='\033[0;33m'; NC='\033[0m'
 
@@ -45,7 +45,7 @@ before=$(find "$SKILL_DIR" -name SKILL.md 2>/dev/null | wc -l)
 old_rev=$(cd "$INSTALL_DIR" && git rev-parse --short HEAD)
 
 # ---------- 拉最新 ----------
-echo -e "${CYAN}☤ HermesYF 更新${NC}"
+echo -e "${CYAN}☤ Hermes 更新${NC}"
 echo -e "${CYAN}→${NC} 拉取 origin/main ..."
 cd "$INSTALL_DIR"
 git fetch origin --quiet

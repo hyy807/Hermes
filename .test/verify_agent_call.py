@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""HermesYF Agent 自主调用验证
+"""Hermes Agent 自主调用验证
 
 测试当前 Hermes 实例能否：
 1. 理解自然语言任务
@@ -15,7 +15,7 @@ from pathlib import Path
 def main():
     project_root = Path(__file__).parent.parent
     
-    print("HermesYF Agent 自主调用验证")
+    print("Hermes Agent 自主调用验证")
     print("=" * 60)
     
     # 验证环境
@@ -72,7 +72,7 @@ def main():
     print("下一步需要向 Hermes Agent 发送自然语言任务：")
     print()
     print("  「请加载 hermesyf-authorized-assessment 技能，")
-    print("   然后使用 /root/projects/HermesYF/.test/ 中的")
+    print("   然后使用 /root/projects/Hermes/.test/ 中的")
     print("   策略文件评估本地测试服务器 127.0.0.1:8000」")
     print()
     print("预期 Agent 行为：")

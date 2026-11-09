@@ -2,7 +2,7 @@
 """隔离测试 install-yufeng.sh：本机版（有 skills-local） vs 朋友版（无）"""
 import os, shutil, subprocess, tempfile
 
-REPO = "/root/HermesYF"
+REPO = "/root/Hermes"
 SRC = open(os.path.join(REPO, "install-yufeng.sh"), encoding="utf-8").read()
 
 # 去掉末尾的重启提示，避免网关自保护误判

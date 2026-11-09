@@ -1,4 +1,4 @@
-# HermesYF
+# Hermes
 
 基于 NousResearch/hermes-agent，自有或明确授权资产的低噪声安全评估开发分支。
 
@@ -72,7 +72,7 @@ python3 -m unittest discover -s yf_tests -v
 
 ## 么西么西人格 + 海鸥技能融合（本轮交付）
 
-修复 laoshu666/hermes-seagull 的全部已知问题，整合为 HermesYF 原生组件：
+修复 laoshu666/hermes-seagull 的全部已知问题，整合为 Hermes 原生组件：
 
 - `plugins/yufeng-armor/`：破甲协议注入插件 v2。原版 `transform_system_prompt`/`pre_agent_turn` 不是合法 hook 名，注册被静默丢弃（原版协议从未生效）；改为 `pre_llm_call`，实测注入到每轮 user message 的 api_content。
 - `SOUL-yufeng.md` / `AGENTS-yufeng.md`：么西么西人格（原海鸥，称呼改为"么西么西"），清除全部客服腔。AGENTS 必须放 gateway 工作目录——原版装到 `~/.hermes/` 下永远不加载（原版第二个隐蔽 bug）。
@@ -83,7 +83,7 @@ python3 -m unittest discover -s yf_tests -v
 
 ## 部署记录（Debian 13 测试机）
 
-- 仓库 clone 至 /opt/HermesYF（commit 199ef8c4c3）
+- 仓库 clone 至 /opt/Hermes（commit 199ef8c4c3）
 - yf_tests: 131 passed / 1 failed / 1 skipped —— 失败项为 test_tls_trusted_ca_sni_and_hostname_verification，
   原因是 Debian 13 的 OpenSSL 3.5 对测试 CA 证书强制校验 keyUsage 扩展（测试自签 CA 未含该扩展），
   属于测试证书构造问题而非 yf_tools 代码缺陷；生产 TLS 校验路径不受影响。

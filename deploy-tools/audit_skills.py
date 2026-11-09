@@ -25,7 +25,7 @@ import re
 from difflib import SequenceMatcher
 from pathlib import Path
 
-REPO_SKILLS = Path("/root/HermesYF/skills")
+REPO_SKILLS = Path("/root/Hermes/skills")
 
 
 def front(text: str) -> dict:

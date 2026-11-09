@@ -1,4 +1,4 @@
-name: HermesYF regression
+name: Hermes regression
 on:
   push:
     paths: ['yf_tools/**', 'yf_tests/**', 'skills/security/hermesyf-authorized-assessment/**', '.github/workflows/hermesyf.yml']

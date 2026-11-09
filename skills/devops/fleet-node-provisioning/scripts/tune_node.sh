@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# HermesYF 节点调优：BBR + 网络栈 + 文件句柄 + 时区
+# Hermes 节点调优：BBR + 网络栈 + 文件句柄 + 时区
 # 用法: scp 到目标机后 bash tune_node.sh（root）
 set -e
 

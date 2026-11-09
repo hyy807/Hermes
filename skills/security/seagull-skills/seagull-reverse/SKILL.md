@@ -2,7 +2,7 @@
 name: seagull-reverse
 description: "二进制/协议/算法逆向: 静态分析、动态跟踪、去混淆、结构恢复、crackme/hook/注入骨架。"
 version: 1.0.0
-author: "Gohappyflyy (原 laoshu666), HermesYF 修复版"
+author: "Gohappyflyy (原 laoshu666), Hermes 修复版"
 license: MIT
 platforms: [linux, macos, windows]
 ---

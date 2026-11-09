@@ -1121,7 +1121,7 @@ def _cmd_skills(rid, params, session, name, arg):
     (``CommandDef("skills", desktop_subcommands=...)`` in hermes_cli/commands.py)."""
     sub = (arg or "").split()
     if not sub:
-        # HermesYF: bare /skills lists loaded skills (messaging-friendly) instead of
+        # Hermes: bare /skills lists loaded skills (messaging-friendly) instead of
         # falling through to the write-approval refusal.
         return _exec_out(rid, _skills_catalog_text(session))
     commands = _tools_mod("hermes_cli.commands")
@@ -1140,7 +1140,7 @@ def _cmd_skills(rid, params, session, name, arg):
 
 
 def _skills_catalog_text(session) -> str:
-    """HermesYF: one-line-per-skill catalog for bare /skills."""
+    """Hermes: one-line-per-skill catalog for bare /skills."""
     import os as _os
     from pathlib import Path as _Path
     home = getattr(session, "home", None) or _os.environ.get("HERMES_HOME") or _os.path.expanduser("~/.hermes")

@@ -10,7 +10,7 @@ curl -fsSL https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
 若以后改回私有，改成带 token 的写法：
 
 ```bash
-export HERMESYF_TOKEN=ghp_xxx      # 能读 HermesYF 的 PAT
+export HERMESYF_TOKEN=ghp_xxx      # 能读 Hermes 的 PAT
 curl -fsSL -H "Authorization: token $HERMESYF_TOKEN" \
   https://raw.githubusercontent.com/hyy807/Hermes/main/deploy.sh | bash
 ```
@@ -20,7 +20,7 @@ deploy.sh 两种都支持：有 token 就用 token clone，没有就走公开 UR
 装完后：
 
 ```bash
-source /root/HermesYF/activate
+source /root/Hermes/activate
 hermes setup                    # 配 API key
 hermes gateway restart
 ```
@@ -30,7 +30,7 @@ hermes gateway restart
 一条命令：
 
 ```bash
-bash /root/HermesYF/update.sh
+bash /root/Hermes/update.sh
 ```
 
 它会：拉最新代码 → 同步人格 / 技能 / 运维脚本 → 报告技能数变化。
@@ -39,9 +39,9 @@ bash /root/HermesYF/update.sh
 变体：
 
 ```bash
-bash /root/HermesYF/update.sh --mcp      # 同时重装 Blitz Strike MCP（188 工具）
-bash /root/HermesYF/update.sh --prune    # 完全对齐：删掉仓库里已不存在的技能
-bash /root/HermesYF/update.sh --prune --mcp
+bash /root/Hermes/update.sh --mcp      # 同时重装 Blitz Strike MCP（188 工具）
+bash /root/Hermes/update.sh --prune    # 完全对齐：删掉仓库里已不存在的技能
+bash /root/Hermes/update.sh --prune --mcp
 ```
 
 `--prune` 只清理 `skills/security`、`skills/pentest`、`skills/media` 三个仓库管理的目录，
@@ -84,10 +84,10 @@ python3 /root/pentest/kickoff.py example.com     # 应无命中（新目标）
 
 **更新后技能没变化**
 `install-yufeng.sh` 是全量同步，会覆盖同名技能但不会删除。确认代码确实更新了：
-`cd /root/HermesYF && git log --oneline -1`
+`cd /root/Hermes && git log --oneline -1`
 
 **kickoff.py 找不到**
-旧版部署没有这个文件。跑一次 `bash /root/HermesYF/update.sh` 就有了；
+旧版部署没有这个文件。跑一次 `bash /root/Hermes/update.sh` 就有了；
 它由 `deploy-tools/` 目录提供，`install-yufeng.sh` 会复制到 `/root/pentest/`。
 
 **想回到干净状态**

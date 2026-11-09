@@ -187,7 +187,7 @@ def scan_memory(kws):
 def _write_contract(target, path):
     """开一个 draft 契约，让本次任务的 scope/egress/交付物有地方落。"""
     import subprocess
-    repo = os.environ.get("HERMESYF_REPO", "/root/HermesYF")
+    repo = os.environ.get("HERMESYF_REPO", "/root/Hermes")
     try:
         subprocess.run([sys.executable, "-m", "yf_tools.task_contract", "new",
                         "--target", target, "-o", path],

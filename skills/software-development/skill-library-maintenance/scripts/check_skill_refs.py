@@ -8,7 +8,7 @@
 
 用法:
   python3 check_skill_refs.py                        # 默认扫 ~/.hermes/skills（运行态）
-  python3 check_skill_refs.py --root /root/HermesYF/skills --root /root/HermesYF/skills-local
+  python3 check_skill_refs.py --root /root/Hermes/skills --root /root/Hermes/skills-local
   python3 check_skill_refs.py --json out.json
 退出码：缺失数 > 0 时为 1。
 """

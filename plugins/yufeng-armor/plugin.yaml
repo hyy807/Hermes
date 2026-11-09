@@ -1,7 +1,7 @@
 name: yufeng-armor
 version: 5.0.0
 description: "么西么西人格插件 v5 — 每轮 pre_llm_call 注入角色锚（判断权归属 + 不劝退 + 不做合法性定性），不含越狱模板词汇。SOUL.md 仍是人格主体。"
-author: "Gohappyflyy, HermesYF"
+author: "Gohappyflyy, Hermes"
 hooks:
   - pre_llm_call
   - on_session_start

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# HermesYF 部署验收自检
+# Hermes 部署验收自检
 # 用法: ./deploy_check.sh            # 检查本机
 #       ./deploy_check.sh 1.2.3.4    # ssh 到远程机检查（用本脚本自身推送执行）
 set -uo pipefail
@@ -10,13 +10,13 @@ if [ $# -ge 1 ]; then
   exit $?
 fi
 
-INSTALL_DIR="${INSTALL_DIR:-/root/HermesYF}"
+INSTALL_DIR="${INSTALL_DIR:-/root/Hermes}"
 PASS=0; FAIL=0; WARN=0
 ok(){  printf "  \033[32m[PASS]\033[0m %-28s %s\n" "$1" "${2:-}"; PASS=$((PASS+1)); }
 bad(){ printf "  \033[31m[FAIL]\033[0m %-28s %s\n" "$1" "${2:-}"; FAIL=$((FAIL+1)); }
 warn(){ printf "  \033[33m[WARN]\033[0m %-28s %s\n" "$1" "${2:-}"; WARN=$((WARN+1)); }
 
-echo "===== HermesYF 部署验收 $(hostname) $(date '+%F %T') ====="
+echo "===== Hermes 部署验收 $(hostname) $(date '+%F %T') ====="
 
 # 1. 仓库
 if [ -d "$INSTALL_DIR/.git" ]; then

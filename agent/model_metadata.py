@@ -254,7 +254,7 @@ def _endpoint_disk_cache_put(normalized: str, cache: dict[str, dict[str, Any]]) 
 CONTEXT_PROBE_TIERS = [256_000, 128_000, 64_000, 32_000, 16_000, 8_000]
 DEFAULT_FALLBACK_CONTEXT = CONTEXT_PROBE_TIERS[0]
 
-# HermesYF: per-model real context windows (verified from official docs 2026-10)
+# Hermes: per-model real context windows (verified from official docs 2026-10)
 _YF_MODEL_CONTEXT = [
     ("claude-opus-5",     1_000_000),
     ("claude-opus-4",     200_000),
@@ -2126,10 +2126,10 @@ def _resolve_custom_endpoint_context_length(model: str, base_url: str, api_key: 
         "Set model.context_length in config.yaml to override.",
         model, base_url, f"{DEFAULT_FALLBACK_CONTEXT:,}",
     )
-    # HermesYF: per-model real context window (before catalog match)
+    # Hermes: per-model real context window (before catalog match)
     _yf_ctx = _get_yf_model_context(model, base_url)
     if _yf_ctx:
-        logger.info("HermesYF: using verified context %s for model %r at %s", f"{_yf_ctx:,}", model, base_url)
+        logger.info("Hermes: using verified context %s for model %r at %s", f"{_yf_ctx:,}", model, base_url)
         return _yf_ctx
     # 3b. Hardcoded catalog as a last resort: a proxied Anthropic gateway fails the probes above
     # but its model name still matches DEFAULT_CONTEXT_LENGTHS.

@@ -2,9 +2,9 @@
 agent_self_test: true
 ---
 
-# HermesYF Agent Self-Test
+# Hermes Agent Self-Test
 
-测试当前 Hermes 实例能否通过技能自主调用 HermesYF 评估工具完成完整任务。
+测试当前 Hermes 实例能否通过技能自主调用 Hermes 评估工具完成完整任务。
 
 ## 测试目标
 
@@ -39,7 +39,7 @@ agent_self_test: true
 
 ## 当前限制
 
-- 本测试需要 HermesYF 代码在 `/root/projects/HermesYF`
+- 本测试需要 Hermes 代码在 `/root/projects/Hermes`
 - 需要 Python 3.11+ 环境
 - Nmap/Nuclei 测试需要对应工具已安装
 - 不测试公网目标（安全限制）

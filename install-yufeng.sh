@@ -1,5 +1,5 @@
 #!/bin/bash
-# HermesYF 么西么西人格 + 海鸥技能一键部署（修复原版所有安装路径错误）
+# Hermes 么西么西人格 + 海鸥技能一键部署（修复原版所有安装路径错误）
 set -e
 HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
 

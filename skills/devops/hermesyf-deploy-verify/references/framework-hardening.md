@@ -4,7 +4,7 @@
 判断标准只有一条：**把这条约束删掉，会不会有一次真实的越界发包/假汇报因此发生。**
 不会 = 只是注释，不是门。
 
-实例都在 `HermesYF/yf_tools/task_contract.py` 与 `assessment_run.py`。
+实例都在 `Hermes/yf_tools/task_contract.py` 与 `assessment_run.py`。
 
 ## 1. scope 匹配：`startswith` 一定会被骗
 
